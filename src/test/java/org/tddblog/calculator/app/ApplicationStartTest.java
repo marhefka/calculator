@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class ApplicationStartTest {
     @Test
     public void applicationStartsSuccessfully() throws Exception {
-        new App().run("server", "config.yml");
+        new App().run("server", "src/test/resources/config-test.yml");
 
         HttpResponse<String> response = Unirest.post("http://localhost:9000/calculator/createCalculator").asString();
         assertThat(response.getStatus()).isEqualTo(200);
