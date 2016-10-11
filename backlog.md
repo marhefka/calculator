@@ -17,7 +17,6 @@ Backlog:
 
 
 
-
 First goal: entering digits, addition, equals sign
 
 Scenario:
