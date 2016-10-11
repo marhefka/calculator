@@ -11,7 +11,7 @@ public class ApplicationStartTest {
     public void applicationStartsSuccessfully() throws Exception {
         new App().run("server", "src/test/resources/config-dropwizard-test.yml");
 
-        HttpResponse<String> response = Unirest.post("http://localhost:9000/calculator/createCalculator").asString();
+        HttpResponse<String> response = Unirest.post("http://localhost:9000/api/calculator/createCalculator").asString();
         assertThat(response.getStatus()).isEqualTo(200);
     }
 }
