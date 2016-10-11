@@ -1,0 +1,1 @@
+![Build status](https://travis-ci.org/marhefka/calculator.svg?branch=master)
