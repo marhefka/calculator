@@ -23,7 +23,7 @@ public class App extends Application<AppConfig> {
 
     @Override
     public String getName() {
-        return "Calculator sample app for tddblog.hu";
+        return "Calculator example app for tddblog.hu";
     }
 
     @Override

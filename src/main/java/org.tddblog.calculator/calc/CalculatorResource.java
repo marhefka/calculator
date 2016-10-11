@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 @Singleton
 public abstract class CalculatorResource implements CalculatorService {
     @POST
-    @Path("/createCalculator")
+    @Path("/create")
     public abstract CreateCalculatorResponseDTO createCalculator();
 
     @POST
