@@ -1,0 +1,5 @@
+# Application specific config
+
+mongo:
+  uri: mongodb://localhost:27017/test
+  clientPoolSize: 1
