@@ -1,6 +1,7 @@
 language: java
 jdk:
   - oraclejdk8
+before_script: echo ${TRAVIS_BUILD_NUMBER} && echo ${TRAVIS_BUILD_NUMBER} >src/main/resources/version.txt
 install: true
 services:
   - mongodb
