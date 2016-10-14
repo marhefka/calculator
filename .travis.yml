@@ -3,15 +3,6 @@ jdk:
 - oraclejdk8
 before_script: echo ${TRAVIS_BUILD_NUMBER} && echo ${TRAVIS_BUILD_NUMBER} >src/main/resources/version.txt
 install: true
-deploy:
-  edge: true
-  provider: cloudfoundry
-  api: https://api.run.pivotal.io
-  username: istvan.marhefka@gmail.com
-  password:
-    secure: a2qoPVUZNvp7IL/GO3+Ljvs+nhZVRrWwE5ExCwvwJyoWzmwo7eqlZPeYSDSJDvzsDSbpqcXyjfJ/2854G6fOJpZ98P8Qu4Z78ojqDEsRm9SnF4vaKkr7heADDR2kNXVgNzLy06Rg5SVlYDWb6bdKdhu8WX9Lk6SUdCJ1H6dieaNMi1J8Q74U91d+mAZmUYGX3k9DC1WJ0qgUuZsLgS1L6DbBaFxjsAfgmXOLP1gqRfB4hbOkLsNyq/ZCCZssDhhmSEortKRTlYaOR8lhFeqsLzIYRZP43v57tD5F64XHPcW2RleV/ZtiC7Q34LbAgig03lxI61prjNsNUbnSLHKnJaHSFfjnk0FHXsKxDqhUkXqUvUUWdH9ZDmJzRy5MsIkZH8nrCrqlupRHb+Ey/OwpGiaN7cJbKaoWohfMARQYBIyZ9FrXoj8LL2DgdBD6A6vuk3T8bYCqYfe88urfrP7N9JZZV2TTf6oc3SOsuifVsAKlL3/A3ghxH5kWN/QRSuH0ZDQgXqYce7Pr+AMHcZ5LGZBi0BNyC4jqhVtwg/9iYjBgrijD0HXezvp+AEpWqBxIb2dJVkhlwYq2wFHn6tswH8A1LdSBdELkZVA9xZNrFgVrrbteQ/v/LVidbzjBaLb4G/558kroiaEnBfUbMagXF3OKKjCOCbntbp3WXs03KjM=
-  organization: tddblog.hu
-  space: development
 services:
 - mongodb
 cache:
