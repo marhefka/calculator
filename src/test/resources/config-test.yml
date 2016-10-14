@@ -1,4 +1,4 @@
-# Application specific config
+# config file for integration tests that run without dropwizard
 
 mongo:
   uri: mongodb://localhost:27017/test

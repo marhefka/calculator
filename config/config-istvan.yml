@@ -7,16 +7,14 @@ mongo:
 # Dropwizard config
 
 server:
-  applicationConnectors:
-  - type: http
-    port: 9000
-  adminConnectors:
-  - type: http
-    port: 9001
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+      type: http
+      port: ${PORT:-9000}
 
 logging:
-  level: WARN
-  loggers:
-    org.tddblog.calculator: INFO
+  level: INFO
   appenders:
     - type: console
