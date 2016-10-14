@@ -4,14 +4,15 @@ jdk:
 before_script: echo ${TRAVIS_BUILD_NUMBER} && echo ${TRAVIS_BUILD_NUMBER} >src/main/resources/version.txt
 install: true
 deploy:
-  edge: true
   provider: cloudfoundry
+  api: https://api.draco-812.appcloud.swisscom.com
   username: istvan.marhefka@gmail.com
   password:
-    secure: BfA3t8kdwCSOoMLMgGgMEp0ASbN/Jbg7H/Z24H+XbmGwIq7cZp1Hirw9EPy/ntvvJ+vocPMb8MLvgr1CVGy4w28OhWUgjL2CwonEsHXlH0NQGB4C+HpyL8Aycl5qIEUQ1J4doydHckjvugCrovSWyaEYFDEoOp4ZpIveJYZCRi6tgZpOtpe7mcYPEpDDCyHbc5DrKaCLz82TdSNFajkaofpztM6uhkMMEOdpECZvRiSfcWUyQnpvHZMyeITSBfY3HkE3HCVpphg5KOMZ1S489NtVxHT4XdURkgL6UhC6ovdI3dXzGhB+tKgvuo86TyB+Samt8CuoIxX0A+KJ8dkmo1mPZ6IdKFBhImmBCcUHcDY+5GGy4mr4OQs24vMoKIUbcS7xk256jP6qQVvCXEAkE0Yvj720/GCFZTAYMWfBaghAuo/apo9qLhQI9Cd6Nm41eDiuIh5rXMAdYeA6LNifeM/J0KwoPiXa2DPkHOtianVhAskbPeMJRA+fxToxnN8lKENm6lYOM/CsNGNSJx7JBaduEpIsa2Z0JGFBJsuu1DIumFeLX6caEmD7w9eWq4X4DYbWAXAw+IQfzLogF3GLPCY3dk7YT0qW9cHVipwT2TqUZPfp1S702ScdD2NfMU0nC6OMgkE8fvs+UH2EsH895x8Fd7iOzLkWLH+8kD6WDvg=
-  api: https://api.run.pivotal.io
+    secure: H9EVNCT+k/SFgbG4Mnuvd+a4iyax6DVyWJblL+JZ7fwe561AZdtLBvczwXNcQHYWDzt6NguquHxTPefODeaqKo/B31CoZM/sxkYPY+dGwtVrgVp6cSeo4P3BMsU/hcGwZFOnfHi8k7DkEZDKGUuKz9v7UMt1s8e7ve+05rGT6kee5FoF4S6LR07yn0+piucINT/EhlW8Ngk4d0ObFlOmIF6DvXlVGDkriwmdxEndxtZxqfs7jlkR0QWCYu79nckzcY69js35w3v5BV8+wdiPBZW5nr0nbTarSwtK0rfATuBZ2Gibmj4Fo08gQKl/Npx922hjXPnhQC+kCdyo2s753PnDIgOWSsLRdT5vWe5F+P6coXeROUiy5/dvV8MQ7oKcFk7pJrTkiuWBKcOh4cX7N5LNxmhRlluxaRa4F8cGqS8HZSlpccPT49QU/TryxXH4PQholTtbJMtS59ZLXKucFYqP1XkCrohq4Uooymoml+ZiFXzxDXA553NANsI3xpSCTuWufAirFU8TfyxbdBxMYLdIRCus8SDQ4BWud7KgaMfAhLryGewg1Qdi1JFPpZfTWcv/RMF5bdxrxbqHB7Ltmk/AmQF922XVUCicIcP2Lz+RJjvb5DS24WZ10V1tsZoSaZqq/cYPsiSpyp+3wL2bZC+Xu0F1BnaBNF8PLbrQ6ME=
   organization: tddblog.hu
   space: development
+  on:
+    repo: marhefka/calculator
 services:
 - mongodb
 cache:
