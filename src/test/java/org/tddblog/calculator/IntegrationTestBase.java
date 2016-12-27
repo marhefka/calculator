@@ -10,9 +10,7 @@ import org.tddblog.calculator.app.AppModule;
 import org.tddblog.calculator.calc.CalculatorService;
 import org.tddblog.calculator.calc.DummyIdGenerator;
 import org.tddblog.calculator.calc.IdGenerator;
-import org.yaml.snakeyaml.Yaml;
-
-import java.io.*;
+import org.tddblog.calculator.mongo.MongoConfig;
 
 public class IntegrationTestBase {
     protected Injector injector;
@@ -21,7 +19,8 @@ public class IntegrationTestBase {
 
     @Before
     public void setUp() throws Exception {
-        AppConfig appConfig = readYamlConfig("config-test.yml");
+        AppConfig appConfig = createConfig();
+
         injector = Guice.createInjector(
                 Modules.override(new AppModule(appConfig)).with(new AppTestModule())
         );
@@ -33,18 +32,13 @@ public class IntegrationTestBase {
         idGenerator = (DummyIdGenerator) injector.getInstance(IdGenerator.class);
     }
 
-    public AppConfig readYamlConfig(String fileName) {
-        try (InputStream input = new FileInputStream(getFile(fileName))) {
-            Yaml yaml = new Yaml();
-            return yaml.loadAs(input, AppConfig.class);
-        } catch (FileNotFoundException ex) {
-            throw new RuntimeException("Please create your config file under src/test/resources/" + fileName);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
+    private AppConfig createConfig() {
+        MongoConfig mongoConfig = new MongoConfig();
+        mongoConfig.setClientPoolSize(1);
+        mongoConfig.setUri("mongodb://localhost:27017/test");
 
-    private File getFile(String fileName) {
-        return new File("src/test/resources/" + fileName);
+        AppConfig appConfig = new AppConfig();
+        appConfig.setMongo(mongoConfig);
+        return appConfig;
     }
 }
