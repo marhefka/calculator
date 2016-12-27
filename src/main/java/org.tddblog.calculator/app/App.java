@@ -13,7 +13,8 @@ public class App extends Application<AppConfig> {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
-            System.out.println("Please provide exactly one argument for configuration. See config/config-istvan.yml");
+            System.out.println("Please provide exactly one argument for configuration.");
+            System.exit(-1);
         }
 
         App app = new App();
